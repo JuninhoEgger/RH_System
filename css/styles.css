@@ -49,3 +49,9 @@ select {
     border-color: #F7F7F7;
     border-radius: 5px;
 }
+
+hr {
+    width: 90%;
+    background-color: #066a75;
+    height: 1.25px;
+}

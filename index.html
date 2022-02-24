@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="css/styles.css" type="text/css">
     <meta name="author" content="Osvaldo Egger Junior">
     <title>Sistema de RH QI</title>
+    <script type="text/javascript" src="scripts/removeE.js"></script>
 </head>
 
 <body>
@@ -21,7 +22,7 @@
             </br>
             <label>Sua data de nascimento</label><input type="date" name="birthDate" required="required" /> </br>
             </br>
-            <label>Seu salário</label><input type="number" name="salary" required="required" min="0"> </br>
+            <label>Seu salário</label><input type="number" name="salary" required="required" min="0" onkeydown="return FilterInput(event)" onpaste="handlePaste(event)"> </br>
             </br>
             <label>Seu Cargo</label>
             <select name="occupation" id="occupation" required="required">

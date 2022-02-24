@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css" type="text/css">
+    <meta name="author" content="Osvaldo Egger Junior">
+    <title>Sistema de RH QI</title>
+</head>
+
+<body>
+    <main id="principal">
+        <form action="" method="post" id="form">
+            <h2 id="title">Cadastro de Funcionário</h2>
+            <label>Seu nome</label><input type="text" name="nome" required="required" placeholder="nome" /> </br>
+            </br>
+            <label>Seu e-mail</label><input type="email" name="email" required="required" placeholder="contato@dominio"> </br>
+            </br>
+            <label>Sua data de nascimento</label><input type="date" name="birthDate" required="required" /> </br>
+            </br>
+            <label>Seu salário</label><input type="number" name="salary" required="required" min="0"> </br>
+            </br>
+            <label>Seu Cargo</label>
+            <select name="occupation" id="occupation" required="required">
+                <option value="" disabled selected>selecione...</option>
+                <option value="gerente">Gerente</option>
+                <option value="analistaDeSistemas">Analista de Sistemas</option>
+                <option value="desenvolvedor">Desenvolvedor</option>
+                <option value="dba">DBA</option>
+            </select>
+            </br>
+            </br><button type="submit" id="btnSubmit">Gravar</button>
+        </form>
+    </main>
+</body>
+
+</html>

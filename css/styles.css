@@ -57,3 +57,8 @@ hr {
     background-color: #066a75;
     height: 1.25px;
 }
+
+#totalSalary {
+    border: none;
+    background-color: #cee1e4;
+}

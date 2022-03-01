@@ -16,3 +16,8 @@ function dateLimiter() {
     data = ano + "-" + mes + "-" + dia;
     document.getElementById('birthDate').setAttribute("max", data);
 }
+
+//DEFININDO SALÁRIOS
+function calculateSalary() {
+    cargo = document.getElementById('occupation').value;
+}

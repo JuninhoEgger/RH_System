@@ -21,9 +21,9 @@
             </br>
             <label>Seu e-mail</label><input type="email" name="email" required="required" placeholder="contato@dominio"> </br>
             </br>
-            <label>Sua data de nascimento</label><input type="date" name="birthDate" id="birthDate" required="required" /> </br>
+            <label>Sua data de nascimento</label><input type="date" name="birthDate" id="birthDate" required="required" onblur="calculateDate('birthDate');" /> </br>
             </br>
-            <label>Seu salário</label><input type="number" name="salary" required="required" min="0" onkeydown="return FilterInput(event)" onpaste="handlePaste(event)"> </br>
+            <label>Seu salário</label><input type="number" name="salary" id="salary" required="required" min="0" onkeydown="return FilterInput(event)" onpaste="handlePaste(event)"> </br>
             </br>
             <label>Seu Cargo</label>
             <select name="occupation" id="occupation" required="required" onChange="calculateSalary();">
@@ -35,7 +35,8 @@
             </select>
             </br><br>
             <label>Total Salário</label><input type="number" name="totalSalary" id="totalSalary" disabled> <br>
-            </br><button type="submit" id="btnSubmit">Gravar</button>
+            </br>
+            <button type="submit" id="btnSubmit">Gravar</button>
         </form>
     </main>
 </body>

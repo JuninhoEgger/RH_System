@@ -24,7 +24,7 @@ function arredondar(numero) {
 //DEFININDO SALÁRIOS
 function calculateSalary() {
     cargo = document.getElementById('occupation').value;
-    salario = parseFloat(document.getElementById('salary').value);
+    var salario = document.getElementById('salary').value;
 
     if (salario <= 0 || salario == undefined || salario == null) {
         if (cargo == 'gerente') {
@@ -37,15 +37,13 @@ function calculateSalary() {
             document.getElementById('totalSalary').value = arredondar(10500.00);
         }
     } else {
-        var salarioReal;
+        var salarioTipoNumero = parseFloat(document.getElementById('salary').value);
         if (cargo == 'gerente') {
-            salarioReal = (salario + salario * 0.10);
-            document.getElementById('totalSalary').value = arredondar(salarioReal);
+            document.getElementById('totalSalary').value = arredondar(salarioTipoNumero += salarioTipoNumero * 0.10);
         } else if (cargo == 'analistaDeSistemas') {
-            salarioReal = (salario + salario * 0.05);
-            document.getElementById('totalSalary').value = arredondar(salarioReal);
+            document.getElementById('totalSalary').value = arredondar(salarioTipoNumero += salarioTipoNumero * 0.05);
         } else {
-            document.getElementById('totalSalary').value = arredondar(salario);
+            document.getElementById('totalSalary').value = arredondar(salarioTipoNumero);
         }
     }
 

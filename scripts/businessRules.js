@@ -55,7 +55,7 @@ class BusinessRules {
         var diferenca = moment(data, "YYYY-MM-DD").diff(moment(dataAniversario, "YYYY-MM-DD"));
         var anos = parseInt(moment.duration(diferenca).asYears());
 
-        if (anos < 17) {
+        if (anos < 18) {
             throw new Error('O funcionário deve ser maior de idade para o cadastro!');
         }
     }

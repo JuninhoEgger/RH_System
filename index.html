@@ -16,7 +16,7 @@
 
 <body onload="dateLimiter();">
     <main id="principal">
-        <form action="index.html" method="post" id="form">
+        <form action="" method="post" id="form">
             <h2 id="title">Cadastro de <br>Funcionário</h2>
             <hr>
             <label>Seu nome</label><input type="text" name="name" id="name" required="required" placeholder="nome" /> </br>
@@ -28,7 +28,9 @@
             <label>Seu salário</label><input type="number" name="salary" id="salary" required="required" min="0" onkeydown="return FilterInput(event)" onpaste="handlePaste(event)"> </br>
             </br>
             <label>Seu Cargo</label>
-            <select name="occupation" id="occupation" required="required" onChange="calculateSalary(); activeDisabled();">
+            <select name="occupation" id="occupation" required="required" onChange="
+                businessRules.calculateSalary();
+                businessRules.activeDisabled();">
                 <option value="" disabled selected>selecione...</option>
                 <option value="gerente">Gerente</option>
                 <option value="analistaDeSistemas">Analista de Sistemas</option>
@@ -38,7 +40,14 @@
             </br><br>
             <label>Total Salário</label><input type="number" name="totalSalary" id="totalSalary" disabled> <br>
             </br>
-            <button type="submit" id="btnSubmit" onclick="calculateAge(document.getElementById('birthDate')); validateName();">Gravar</button>
+            <button type="submit" id="btnSubmit" onclick="
+                try {
+                    businessRules.validateName();
+                    businessRules.calculateAge(document.getElementById('birthDate'));  
+                } catch (error) {
+                    alert(error.message);
+                }     
+            ">Gravar</button>
         </form>
     </main>
 </body>

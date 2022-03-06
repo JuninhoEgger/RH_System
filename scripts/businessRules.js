@@ -49,7 +49,7 @@ function calculateSalary() {
 
 }
 
-function calculateAge() {
+function calculateAge(birthDate) {
     dataAtual = new Date();
     dia = dataAtual.getDate();
     mes = dataAtual.getMonth() + 1;
@@ -64,11 +64,11 @@ function calculateAge() {
     }
 
     data = ano + "-" + mes + "-" + dia;
-    console.log(data);
-    dataAniversario = document.getElementById('birthDate').value;
-    console.log(dataAniversario);
-
+    dataAniversario = birthDate.value;
     var diferenca = moment(data, "YYYY-MM-DD").diff(moment(dataAniversario, "YYYY-MM-DD"));
     var anos = parseInt(moment.duration(diferenca).asYears());
 
+    if (anos < 17) {
+        return window.alert('O funcionário deve ser maior de idade para o cadastro!');
+    }
 }

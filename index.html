@@ -9,31 +9,45 @@
     <meta name="author" content="Osvaldo Egger Junior">
     <title>Sistema de RH QI</title>
     <script type="text/javascript" src="scripts/removeE.js"></script>
+    <script type="text/javascript" src="scripts/businessRules.js"></script>
+    <script type="text/javascript" src="scripts/dateLimiter.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
 </head>
 
-<body>
+<body onload="dateLimiter();">
     <main id="principal">
         <form action="" method="post" id="form">
             <h2 id="title">Cadastro de <br>Funcionário</h2>
             <hr>
-            <label>Seu nome</label><input type="text" name="name" required="required" placeholder="nome" /> </br>
+            <label>Seu nome</label><input type="text" name="name" id="name" required="required" placeholder="nome" /> </br>
             </br>
             <label>Seu e-mail</label><input type="email" name="email" required="required" placeholder="contato@dominio"> </br>
             </br>
             <label>Sua data de nascimento</label><input type="date" name="birthDate" id="birthDate" required="required" /> </br>
             </br>
-            <label>Seu salário</label><input type="number" name="salary" required="required" min="0" onkeydown="return FilterInput(event)" onpaste="handlePaste(event)"> </br>
+            <label>Seu salário</label><input type="number" name="salary" id="salary" required="required" min="0" onkeydown="return FilterInput(event)" onpaste="handlePaste(event)"> </br>
             </br>
             <label>Seu Cargo</label>
-            <select name="occupation" id="occupation" required="required">
+            <select name="occupation" id="occupation" required="required" onChange="
+                businessRules.calculateSalary();
+                businessRules.activeDisabled();">
                 <option value="" disabled selected>selecione...</option>
                 <option value="gerente">Gerente</option>
                 <option value="analistaDeSistemas">Analista de Sistemas</option>
                 <option value="desenvolvedor">Desenvolvedor</option>
                 <option value="dba">DBA</option>
             </select>
+            </br><br>
+            <label>Total Salário</label><input type="number" name="totalSalary" id="totalSalary" disabled> <br>
             </br>
-            </br><button type="submit" id="btnSubmit">Gravar</button>
+            <button type="submit" id="btnSubmit" onclick="
+                try {
+                    businessRules.validateName();
+                    businessRules.calculateAge(document.getElementById('birthDate'));  
+                } catch (error) {
+                    alert(error.message);
+                }     
+            ">Gravar</button>
         </form>
     </main>
 </body>

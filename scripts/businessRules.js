@@ -76,3 +76,11 @@ function calculateAge(birthDate) {
 function activeDisabled() {
     document.getElementById('salary').removeAttribute('required');
 }
+
+function validateName() {
+    nome = document.getElementById('name').value;
+    cond = !!nome.match(/^[A-ZÀ-Ÿ][A-zÀ-ÿ']+\s([A-zÀ-ÿ']\s?)*[A-ZÀ-Ÿ][A-zÀ-ÿ']+$/) + ' ' + nome;
+    if (!cond) {
+        return window.alert('O campo deve ter no mínimo o nome, segundo nome e/ou sobrenome');
+    }
+}

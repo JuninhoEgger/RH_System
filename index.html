@@ -18,7 +18,7 @@
         <form action="index.html" method="post" id="form">
             <h2 id="title">Cadastro de <br>Funcionário</h2>
             <hr>
-            <label>Seu nome</label><input type="text" name="name" required="required" placeholder="nome" /> </br>
+            <label>Seu nome</label><input type="text" name="name" id="name" required="required" placeholder="nome" /> </br>
             </br>
             <label>Seu e-mail</label><input type="email" name="email" required="required" placeholder="contato@dominio"> </br>
             </br>
@@ -37,7 +37,7 @@
             </br><br>
             <label>Total Salário</label><input type="number" name="totalSalary" id="totalSalary" disabled> <br>
             </br>
-            <button type="submit" id="btnSubmit" onclick="calculateAge(document.getElementById('birthDate'));">Gravar</button>
+            <button type="submit" id="btnSubmit" onclick="calculateAge(document.getElementById('birthDate')); validateName();">Gravar</button>
         </form>
     </main>
 </body>

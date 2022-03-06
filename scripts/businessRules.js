@@ -48,3 +48,27 @@ function calculateSalary() {
     }
 
 }
+
+function calculateAge() {
+    dataAtual = new Date();
+    dia = dataAtual.getDate();
+    mes = dataAtual.getMonth() + 1;
+    ano = dataAtual.getFullYear();
+
+    if (dia < 10) {
+        dia = '0' + dia;
+    }
+
+    if (mes < 10) {
+        mes = '0' + mes;
+    }
+
+    data = ano + "-" + mes + "-" + dia;
+    console.log(data);
+    dataAniversario = document.getElementById('birthDate').value;
+    console.log(dataAniversario);
+
+    var diferenca = moment(data, "YYYY-MM-DD").diff(moment(dataAniversario, "YYYY-MM-DD"));
+    var anos = parseInt(moment.duration(diferenca).asYears());
+
+}

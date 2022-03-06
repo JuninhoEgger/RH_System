@@ -10,6 +10,7 @@
     <title>Sistema de RH QI</title>
     <script type="text/javascript" src="scripts/removeE.js"></script>
     <script type="text/javascript" src="scripts/businessRules.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
 </head>
 
 <body onload="dateLimiter();">
@@ -21,7 +22,7 @@
             </br>
             <label>Seu e-mail</label><input type="email" name="email" required="required" placeholder="contato@dominio"> </br>
             </br>
-            <label>Sua data de nascimento</label><input type="date" name="birthDate" id="birthDate" required="required" onblur="calculateDate('birthDate');" /> </br>
+            <label>Sua data de nascimento</label><input type="date" name="birthDate" id="birthDate" required="required" /> </br>
             </br>
             <label>Seu salário</label><input type="number" name="salary" id="salary" required="required" min="0" onkeydown="return FilterInput(event)" onpaste="handlePaste(event)"> </br>
             </br>
@@ -36,7 +37,7 @@
             </br><br>
             <label>Total Salário</label><input type="number" name="totalSalary" id="totalSalary" disabled> <br>
             </br>
-            <button type="submit" id="btnSubmit">Gravar</button>
+            <button type="submit" id="btnSubmit" onclick="calculateAge();">Gravar</button>
         </form>
     </main>
 </body>

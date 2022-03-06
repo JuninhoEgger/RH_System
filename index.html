@@ -27,7 +27,7 @@
             <label>Seu salário</label><input type="number" name="salary" id="salary" required="required" min="0" onkeydown="return FilterInput(event)" onpaste="handlePaste(event)"> </br>
             </br>
             <label>Seu Cargo</label>
-            <select name="occupation" id="occupation" required="required" onChange="calculateSalary();">
+            <select name="occupation" id="occupation" required="required" onChange="calculateSalary(); activeDisabled();">
                 <option value="" disabled selected>selecione...</option>
                 <option value="gerente">Gerente</option>
                 <option value="analistaDeSistemas">Analista de Sistemas</option>

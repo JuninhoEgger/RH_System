@@ -72,3 +72,7 @@ function calculateAge(birthDate) {
         return window.alert('O funcionário deve ser maior de idade para o cadastro!');
     }
 }
+
+function activeDisabled() {
+    document.getElementById('salary').removeAttribute('required');
+}
